@@ -1,0 +1,158 @@
+<ion-header [translucent]="true">
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+        >
+          <svg
+            class="bi me-2"
+            width="40"
+            height="32"
+            role="img"
+            aria-label="Bootstrap"
+          >
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+
+        <ul
+          class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+        >
+          <li>
+            <a href="#" class="nav-link px-2 text-secondary">easyShopping</a>
+          </li>
+          <!--li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li-->
+        </ul>
+
+        <form class="col-12 col-lg-5 mb-3 mb-lg-0 me-lg-3">
+          <input
+            type="search"
+            class="form-control form-control-dark"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2">
+            Connexion
+          </button>
+          <button type="button" class="btn btn-warning">Inscription</button>
+        </div>
+      </div>
+    </div>
+  </header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 mx-auto">
+        <div class="card px-3 my-5 py-3">
+          <h1 class="text-center mb-3">Ajout d'un nouveau produit</h1>
+          <form (ngSubmit)="submit()" class="" action="">
+            <div class="mb-3">
+              <label for="nom" class="form-label">Nom du produit</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nom"
+                name="nom"
+                placeholder="Nom du produit"
+                [(ngModel)] = "nom"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="quantite" class="form-label"
+                >Quantité du produit</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="quantite"
+                name="quantite"
+                placeholder="Quantite du produit"
+                [(ngModel)] = "quantite"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="prix" class="form-label">Prix du produit</label>
+              <input
+                type="text"
+                class="form-control"
+                id="prix"
+                name="prix"
+                placeholder="Prix du produit"
+                [(ngModel)] = "prix"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">Image du produit</label>
+              <input
+                type="text"
+                class="form-control"
+                id="image"
+                name="image"
+                placeholder="Le lien de l'image du produit"
+                [(ngModel)] = "image"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="nomPrenomProprietaire" class="form-label"
+                >Propriétaire du produit</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="nomPrenomProprietaire"
+                name="nomPrenomProprietaire"
+                placeholder="Nom et prénom du propriétaire"
+                [(ngModel)] = "nomPrenomProprietaire"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="contactProprietaire" class="form-label"
+                >Contact du propriétaire</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="contactProprietaire"
+                name="contactProprietaire"
+                placeholder="Contact du propriétaire"
+                [(ngModel)] = "contactProprietaire"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label"
+                >Description du produit</label
+              >
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                rows="3"
+                [(ngModel)] = "description"
+              ></textarea>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-danger mx-2" (click)="retourEnArriere()">
+                Annuler
+              </button>
+              <button type="submit" class="btn btn-primary mx-2">
+                Enregistrer
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

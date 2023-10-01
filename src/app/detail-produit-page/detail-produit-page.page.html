@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+  
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">easyShopping</a></li>
+          <!--li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li-->
+        </ul>
+  
+        <form class="col-12 col-lg-5 mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+  
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2">Connexion</button>
+          <button type="button" class="btn btn-warning">Inscription</button>
+        </div>
+      </div>
+    </div>
+  </header>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 mx-auto">
+        <div class="card px-4 my-5 py-3 rounded-2">
+          <h1 class="text-center mb-3">
+            {{produit?.nom}}
+          </h1>
+          <div>
+            <img src={{produit?.image}} alt="">
+          </div>
+          <div class="text-muted mb-4">
+            <span class="text-muted">Ajouté le : </span>
+            <span>{{produit?.dateAjout && formatDate(produit?.dateAjout)}}</span>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="me-auto">
+              <span class="text-muted">Propriétaire</span><br>
+              <span>{{produit?.nomPrenomProprietaire}}</span>
+            </div>
+            <div class="">
+              <span class="text-muted">Contact</span><br>
+              <span>{{produit?.contactProprietaire}}</span>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="me-auto">
+              <span class="text-muted">Prix : </span>
+              <span class="text-primary">{{produit?.prix}} FCFA</span>
+            </div>
+            <div class="">
+              <span class="text-muted">Quantité : </span>
+            <span>{{produit?.quantite}}</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <span class="text-muted">Description</span> <br>
+            {{produit?.description}}
+          </div>
+          <div class="d-flex">
+            <div class="btn btn-warning me-auto" (click)="retourEnArriere()">
+              Retour
+            </div>
+            <div>
+              <div class="btn btn-warning ms-2" (click)="navigate('form/'+produit?.produitId)">
+                Modifier
+              </div>
+              <div class="btn btn-danger ms-2" (click)="deleteProduit()">
+                Supprimer
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+  
+  </div>
+</ion-content>
+
