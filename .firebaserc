@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "rhamyecommerceappweb"
-  }
+    "default": "rhamyecommerceappweb",
+    "pro": "devoir-eb649"
+  },
+  "targets": {},
+  "etags": {}
 }
